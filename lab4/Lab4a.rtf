@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14060\viewh11440\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 30 ?- house = house.\
+true.\
+\
+31 ?- house = abc.\
+false.\
+\
+32 ?- edge(a,b) = edge(C,b).\
+C = a.\
+\
+33 ?- edge(a,d) = edge(C,B).\
+C = a,\
+B = d.\
+\
+34 ?- edge(C,B) = edge(a,d).\
+C = a,\
+B = d.\
+\
+35 ?- edge(A,f(g,h)) = edge(a,B).\
+A = a,\
+B = f(g, h).\
+\
+36 ?- edge(A,A) = edge(b,c).\
+false.\
+\
+37 ?- edge(A,A) = edge(b,b).\
+A = b.\
+\
+38 ?- A = B, B = f.\
+A = B, B = f.\
+\
+39 ?- A = B, B = f, A = e.\
+false.\
+\
+30) Both are the same atom, they are identical.\
+31) They are two different constants, they are not identical.\
+32) Both are edge with 2 arguments. a and C unify, b and b are identical.\
+33) The structures match. Each variable pairs with a constant. C becomes a, and B becomes d.\
+34) Same as 33 with sides swapped.\
+35) The first pair gives A = a. The second, B is a variable and unifies with any term.\
+36) The first pair gives A = b. The second requires A to equal to c, but it equals b, they are different constants.\
+37) A = b in the first pair and the second pair is b = b.\
+38) The first links A to B, the second links B to f. A = B = f.\
+39) The first 2 link A to f and B to f. The 3rd asks if A = e. e does not equal f, non identical contants dont unify.}
